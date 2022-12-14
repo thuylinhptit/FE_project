@@ -1,0 +1,32 @@
+.booking-room {
+  background: white;
+  min-width: 700px;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.room-item {
+  padding: 0.5rem;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 4px;
+  box-shadow: 0px 0px 1px 1px rgba(116, 115, 115, 0.2);
+  cursor: pointer;
+}
+.room-item:hover {
+  background: rgb(242, 241, 241);
+}
+.room-item .room {
+  font-weight: 550;
+  font-size: 1.125rem;
+}
+.room-item .room-status {
+  color: gray;
+}
+.room-action {
+  font-size: 25px;
+  text-decoration: none;
+  color: rgb(53, 53, 53);
+}

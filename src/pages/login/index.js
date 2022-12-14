@@ -11,7 +11,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const [loginData, setLoginData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -21,9 +21,8 @@ const LoginPage = () => {
     const res = await authServices.login(loginData);
     console.log(res);
     if (res.status === 200) {
-      const { token, user } = res.data;
-      const accessToken = token?.accessKey;
-      login(accessToken, user);
+      const user = res.data;
+      login(user);
       toast("Login success", {
         type: "success",
       });
@@ -48,14 +47,15 @@ const LoginPage = () => {
         <p id="error" className="text-danger"></p>
         <form id="#login-form">
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="username">Username</label>
             <div className="form-field">
               <span className="icon">
                 <MdEmail />
               </span>
               <input
-                type="email"
-                name="email"
+                type="text"
+                name="username"
+                id="username"
                 className="form-control"
                 onChange={onChange}
               />
@@ -71,6 +71,7 @@ const LoginPage = () => {
               <input
                 type="password"
                 name="password"
+                id="password"
                 className="form-control"
                 onChange={onChange}
               />

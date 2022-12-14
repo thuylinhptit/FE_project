@@ -1,7 +1,5 @@
 import { createContext, useEffect, useReducer } from "react";
 import userServices from "../services/userServices";
-import authServices from "../services/authServices";
-import { toast } from "react-toastify";
 
 const initialAuthState = {
   isAuthenticated: false,
@@ -9,11 +7,11 @@ const initialAuthState = {
   user: null,
 };
 
-const setSession = (accessToken) => {
-  if (accessToken) {
-    localStorage.setItem("token", accessToken);
+const setSession = (user) => {
+  if (user) {
+    localStorage.setItem("user", user);
   } else {
-    localStorage.removeItem("token");
+    localStorage.removeItem("user");
   }
 };
 
@@ -60,14 +58,9 @@ export const AuthProvider = (props) => {
   useEffect(() => {
     const initialize = async () => {
       try {
-        const accessToken = window.localStorage.getItem("token");
+        const user = window.localStorage.getItem("user");
 
-        if (accessToken) {
-          setSession(accessToken);
-
-          const response = await userServices.getInfoMe();
-          const user = response.data;
-
+        if (user) {
           dispatch({
             type: "INITIALIZE",
             payload: {
@@ -99,8 +92,8 @@ export const AuthProvider = (props) => {
     initialize();
   }, []);
 
-  const login = async (accessToken, user) => {
-    setSession(accessToken);
+  const login = async (user) => {
+    setSession(user);
     dispatch({
       type: "LOGIN",
       payload: {

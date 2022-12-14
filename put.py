@@ -1,9 +1,13 @@
+import email
+from django.forms import PasswordInput
+from django.shortcuts import render
 import requests
  
+ # register
 r = requests.post('http://127.0.0.1:8000/v2/api/staff/', 
 data = {
     "username": "linhnt",
-    "password": "123",
+    "password": PasswordInput,
     "name": "Linh",
     "age": 18,
     "phone": "0333855577",
@@ -16,3 +20,9 @@ data = {
 )
 print(r)
 print(r.content)
+
+# login
+
+# profile
+
+# room

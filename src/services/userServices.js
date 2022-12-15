@@ -9,6 +9,10 @@ export class UserServices extends BaseServices {
   getInfoMe() {
     return this.get(`/users/me`);
   }
+
+  getListMember() {
+    return this.get(`/staff`)
+  }
 }
 
 export default new UserServices();

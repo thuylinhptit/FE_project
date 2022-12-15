@@ -6,6 +6,7 @@ import { MdEmail } from "react-icons/md";
 import { HiUserGroup } from "react-icons/hi";
 
 const InformationPage = () => {
+
   return (
     <div className="box-wrapper">
       <div id="profile">

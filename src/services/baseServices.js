@@ -37,7 +37,7 @@ class BaseServices {
     const config = {
       headers: {
         "content-type": "application/json",
-        "access-token": token,
+
       },
       ...this.configHeaders,
     };

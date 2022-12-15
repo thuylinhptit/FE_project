@@ -26,6 +26,7 @@ const LoginPage = () => {
       toast("Login success", {
         type: "success",
       });
+      navigate("/choose_member")
     }
   };
 

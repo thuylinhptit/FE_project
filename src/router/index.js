@@ -4,6 +4,7 @@ import InformationPage from "../pages/information";
 import LoginPage from "../pages/login";
 import RegisterPage from "../pages/register";
 import RoomPage from "../pages/room";
+import ChooseMemberPage from "../pages/room/choose_member"
 import RoomDetailPage from "../pages/room/detail";
 
 const router = [
@@ -24,6 +25,14 @@ const router = [
     element: (
       <Authenticated>
         <InformationPage />
+      </Authenticated>
+    ),
+  },
+  {
+    path: "choose_member",
+    element: (
+      <Authenticated>
+        <ChooseMemberPage />
       </Authenticated>
     ),
   },

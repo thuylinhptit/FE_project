@@ -9,7 +9,7 @@ const initialAuthState = {
 
 const setSession = (user) => {
   if (user) {
-    localStorage.setItem("user", user);
+    localStorage.setItem("user", JSON.stringify(user));
   } else {
     localStorage.removeItem("user");
   }
